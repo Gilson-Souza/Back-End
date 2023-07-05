@@ -16,6 +16,8 @@ namespace candidato.Business.Strategys
                 return "Não é permitido adicionar mais de 3 telefones ao candidato.";
             }
 
+         
+
             return null;
 
         }

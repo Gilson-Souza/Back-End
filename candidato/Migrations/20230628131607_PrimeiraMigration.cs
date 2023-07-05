@@ -20,7 +20,7 @@ namespace candidato.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
+                    Nome = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Sigla = table.Column<string>(type: "varchar(2)", maxLength: 2, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -37,9 +37,9 @@ namespace candidato.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    NomePai = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
+                    NomePai = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    NomeMae = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
+                    NomeMae = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -54,7 +54,7 @@ namespace candidato.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
+                    Nome = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     EstadoId = table.Column<long>(type: "bigint", nullable: false)
                 },
@@ -66,7 +66,6 @@ namespace candidato.Migrations
                         column: x => x.EstadoId,
                         principalTable: "Estados",
                         principalColumn: "Id",
-                        onUpdate: ReferentialAction.Cascade,
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -77,11 +76,11 @@ namespace candidato.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Logradouro = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
+                    Logradouro = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Cep = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Numero = table.Column<string>(type: "longtext", nullable: false)
+                    Numero = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CidadeId = table.Column<long>(type: "bigint", nullable: false)
                 },
@@ -93,7 +92,6 @@ namespace candidato.Migrations
                         column: x => x.CidadeId,
                         principalTable: "Cidades",
                         principalColumn: "Id",
-                        onUpdate: ReferentialAction.Cascade,
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -104,7 +102,7 @@ namespace candidato.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
+                    Nome = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     FiliacaoId = table.Column<long>(type: "bigint", nullable: false),
                     EnderecoId = table.Column<long>(type: "bigint", nullable: false)
@@ -117,14 +115,12 @@ namespace candidato.Migrations
                         column: x => x.EnderecoId,
                         principalTable: "Enderecos",
                         principalColumn: "Id",
-                        onUpdate: ReferentialAction.Cascade,
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Candidatos_Filiacoes_FiliacaoId",
                         column: x => x.FiliacaoId,
                         principalTable: "Filiacoes",
                         principalColumn: "Id",
-                        onUpdate: ReferentialAction.Cascade,
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -135,7 +131,7 @@ namespace candidato.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "longtext", nullable: false)
+                    Nome = table.Column<string>(type: "VARCHAR(200)", maxLength: 200, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CandidatooId = table.Column<long>(type: "bigint", nullable: true)
                 },
@@ -147,7 +143,6 @@ namespace candidato.Migrations
                         column: x => x.CandidatooId,
                         principalTable: "Candidatos",
                         principalColumn: "Id",
-                        onUpdate: ReferentialAction.Cascade,
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -158,7 +153,7 @@ namespace candidato.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Numero = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: false)
+                    Numero = table.Column<string>(type: "VARCHAR(15)", maxLength: 15, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Tipo = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -172,7 +167,6 @@ namespace candidato.Migrations
                         column: x => x.CandidatooId,
                         principalTable: "Candidatos",
                         principalColumn: "Id",
-                        onUpdate: ReferentialAction.Cascade,
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");

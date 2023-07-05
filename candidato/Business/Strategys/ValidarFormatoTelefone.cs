@@ -19,7 +19,8 @@ namespace candidato.Business.Strategys
                 {
                     return "Formato de telefone não aceito.";
                 }
-               
+
+                
             }
 
             return null;

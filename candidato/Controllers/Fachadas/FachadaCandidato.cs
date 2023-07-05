@@ -42,7 +42,7 @@ namespace candidato.Controllers.Fachadas
             return await _candidatoDao.Adicionar(entidade);
         }
 
-        public async Task<Candidatoo> Atualizar(Candidatoo entidade, long id)
+        public async Task<Candidatoo> Atualizar(long id, Candidatoo entidade)
         {
             StringBuilder errors = new StringBuilder();
 
@@ -63,7 +63,7 @@ namespace candidato.Controllers.Fachadas
             }
 
             // As validações foram atendidas, envie a solicitação para o DAO
-            return await _candidatoDao.Atualizar(entidade, id);
+            return await _candidatoDao.Atualizar(entidade);
         }
 
         public async Task<Candidatoo> ObterPorId(long id)

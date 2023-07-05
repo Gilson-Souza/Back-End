@@ -5,6 +5,7 @@ using candidato.Data;
 using candidato.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using NuGet.ContentModel;
 
 
 namespace candidato.DataAccess.daos;
@@ -28,33 +29,32 @@ public class CandidatoDao: IDao
     }
 
 
-    public async Task<Candidatoo> Atualizar(Candidatoo entidade, long id)
+    public async Task<Candidatoo> Atualizar(Candidatoo entidade)
     {
-        Candidatoo candidatoPorId = await ObterPorId(id);
-
-      
+        Candidatoo candidatoPorId = await ObterPorId(entidade.Id);
+       
         if (candidatoPorId == null)
         {
-            throw new Exception($"Usuario para o ID: {id} não foi encontrado no banco de dados");
+            throw new Exception($"Usuario para o ID: {entidade.Id} não foi encontrado no banco de dados");
         }
-     
+  
         candidatoPorId.Nome = entidade.Nome;
         candidatoPorId.Filiacao = entidade.Filiacao;
         candidatoPorId.Endereco = entidade.Endereco;
         candidatoPorId.Telefones = entidade.Telefones;
         candidatoPorId.Cursos = entidade.Cursos;
-      
-
+        
         _dbContext.Candidatos.Update(candidatoPorId);
-        await _dbContext.SaveChangesAsync();
+        _dbContext.SaveChanges();
 
         return candidatoPorId;
+        
     }
 
 
     public async Task<Candidatoo> ObterPorId(long id)
     {
-        return await _dbContext.Candidatos
+        return await _dbContext.Candidatos.AsNoTracking()
             .Include(c => c.Telefones)
             .Include(c => c.Cursos)
             .Include(c => c.Endereco)
@@ -94,18 +94,17 @@ public class CandidatoDao: IDao
             throw new Exception($"Candidato com o ID: {id} não foi encontrado no banco de dados");
         }
         
+      
         _dbContext.Telefones.RemoveRange(candidato.Telefones);
         _dbContext.Cursos.RemoveRange(candidato.Cursos);
-
         // Remover Endereco, Cidade e Estado
         _dbContext.Enderecos.Remove(candidato.Endereco);
         _dbContext.Cidades.Remove(candidato.Endereco.Cidade);
         _dbContext.Estados.Remove(candidato.Endereco.Cidade.Estado);
 
         _dbContext.Filiacoes.Remove(candidato.Filiacao);
-        _dbContext.Candidatos.Remove(candidato);
         
-
+        _dbContext.Candidatos.Remove(candidato);
         await _dbContext.SaveChangesAsync();
 
         return true;

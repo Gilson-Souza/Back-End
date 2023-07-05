@@ -10,20 +10,12 @@ public class Candidatoo
     public long Id { get;  set; }
 
     public string? Nome { get;  set; }
+    public long FiliacaoId { get; internal set;}
+    public virtual Filiacao? Filiacao { get; set; }
+    public long EnderecoId { get; internal set; }
+    public virtual Endereco? Endereco { get; set; }
+    public virtual ICollection<Telefone>? Telefones  { get; set; }
+    public virtual ICollection<Curso>? Cursos { get;  set; }
 
 
-    [ForeignKey("Filiacao")]
-    public long FiliacaoId { get; set; }
-    public Filiacao? Filiacao { get; set; }
-
-
-    [ForeignKey("Endereco")]
-    public long EnderecoId { get; set; }
-    public Endereco? Endereco { get; set; }
-
-    public  List<Telefone>? Telefones { get; set; }
-   
-    public List<Curso>? Cursos { get;  set; }
-
-    
 }

@@ -8,17 +8,18 @@ namespace candidato.Data.map
     {
         public void Configure(EntityTypeBuilder<Cidade> builder)
         {
-                 builder.HasKey(x => x.Id);
-
+                
 
                 builder.Property(x => x.Nome)
                        .IsRequired()
-                       .HasMaxLength(255);
+                       .HasColumnType("VARCHAR")
+                       .HasMaxLength(200);
 
 
             // Relacionamento com Estado
                 builder.HasOne(c => c.Estado)
                        .WithOne()
+                       .HasForeignKey<Cidade>(c => c.EstadoId)
                        .IsRequired()
                        .OnDelete(DeleteBehavior.Cascade);
                   

@@ -8,8 +8,13 @@ namespace candidato.Data.map
     {
         public void Configure(EntityTypeBuilder<Curso> builder)
         {
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Nome).IsRequired();  
+          
+            builder.Property(x => x.Nome)
+                .HasColumnType("VARCHAR")
+                .HasMaxLength(200)
+                .IsRequired();
+
+         
 
         }
 

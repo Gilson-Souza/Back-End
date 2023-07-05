@@ -8,9 +8,14 @@ namespace candidato.Data.map
     {
         public void Configure(EntityTypeBuilder<Estado> builder)
         {
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Nome).IsRequired().HasMaxLength(255);
-            builder.Property(x => x.Sigla).IsRequired().HasMaxLength(2);
+            builder.Property(x => x.Nome)
+                   .HasColumnType("VARCHAR")
+                   .IsRequired()
+                   .HasMaxLength(200);
+
+            builder.Property(x => x.Sigla)
+                   .IsRequired()
+                   .HasMaxLength(2);
         }
     }
 }

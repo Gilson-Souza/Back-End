@@ -8,13 +8,18 @@ namespace candidato.Data.map
     {
         public void Configure(EntityTypeBuilder<Telefone> builder)
         {
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Numero).IsRequired().HasMaxLength(255);
+       
+            builder.Property(x => x.Numero)
+                   .HasColumnType("VARCHAR")
+                   .IsRequired()
+                   .HasMaxLength(15);
 
             // Mapeamento do tipo de telefone (enum)
              builder.Property(x => x.Tipo)
                     .IsRequired()
                     .HasConversion<string>();
+
+          
         }
     }
 }
