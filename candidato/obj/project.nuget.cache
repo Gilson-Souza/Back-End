@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EvIT1RgQedjGjvxl6aBfYXx3MZhNuLYlf7QAJvddp9u5Dh/R1cUOEqFBSw3760EDw8gdMCozNMtsbfvhdKvCxA==",
+  "dgSpecHash": "6zBhpiLxIX2nBHl0qb5SU60Y0tcYK430qYG9xw+zNX/m8uvrZ8f2umF+m302mQRg5Ex9JSHGLFkjpZwK6qaYDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gilso\\OneDrive\\Ambiente de Trabalho\\Aplicações\\C-Sharp\\eng-III\\candidato\\candidato.csproj",
+  "projectFilePath": "C:\\Users\\Gilso\\OneDrive\\Ambiente de Trabalho\\Projetos\\Back-End\\Back-End\\candidato\\candidato.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gilso\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Gilso\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

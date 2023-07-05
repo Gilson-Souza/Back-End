@@ -10515,11 +10515,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gilso\\OneDrive\\Ambiente de Trabalho\\Aplicações\\C-Sharp\\eng-III\\candidato\\candidato.csproj",
+      "projectUniqueName": "C:\\Users\\Gilso\\OneDrive\\Ambiente de Trabalho\\Projetos\\Back-End\\Back-End\\candidato\\candidato.csproj",
       "projectName": "candidato",
-      "projectPath": "C:\\Users\\Gilso\\OneDrive\\Ambiente de Trabalho\\Aplicações\\C-Sharp\\eng-III\\candidato\\candidato.csproj",
+      "projectPath": "C:\\Users\\Gilso\\OneDrive\\Ambiente de Trabalho\\Projetos\\Back-End\\Back-End\\candidato\\candidato.csproj",
       "packagesPath": "C:\\Users\\Gilso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gilso\\OneDrive\\Ambiente de Trabalho\\Aplicações\\C-Sharp\\eng-III\\candidato\\obj\\",
+      "outputPath": "C:\\Users\\Gilso\\OneDrive\\Ambiente de Trabalho\\Projetos\\Back-End\\Back-End\\candidato\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
