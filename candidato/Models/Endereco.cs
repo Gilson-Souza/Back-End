@@ -11,11 +11,7 @@ public class Endereco
     public string? Logradouro { get; set; }
     public string? Cep { get; set; }
     public string? Numero { get; set; }
-
-
-    [ForeignKey("Cidade")]
-    public long CidadeId { get; set; }
-    public Cidade? Cidade { get; set; }
-
+    public virtual Cidade? Cidade { get; set; }
+    public long CidadeId { get; internal set; }
 }
     

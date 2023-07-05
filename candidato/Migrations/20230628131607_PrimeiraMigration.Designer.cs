@@ -11,7 +11,7 @@ using candidato.Data;
 namespace candidato.Migrations
 {
     [DbContext(typeof(CandidatoContext))]
-    [Migration("20230620023219_PrimeiraMigration")]
+    [Migration("20230628131607_PrimeiraMigration")]
     partial class PrimeiraMigration
     {
         /// <inheritdoc />
@@ -36,8 +36,8 @@ namespace candidato.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(200)
+                        .HasColumnType("VARCHAR");
 
                     b.HasKey("Id");
 
@@ -61,8 +61,8 @@ namespace candidato.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(200)
+                        .HasColumnType("VARCHAR");
 
                     b.HasKey("Id");
 
@@ -83,7 +83,8 @@ namespace candidato.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(200)
+                        .HasColumnType("VARCHAR");
 
                     b.HasKey("Id");
 
@@ -108,12 +109,13 @@ namespace candidato.Migrations
 
                     b.Property<string>("Logradouro")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(200)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("Numero")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(20)
+                        .HasColumnType("VARCHAR");
 
                     b.HasKey("Id");
 
@@ -131,8 +133,8 @@ namespace candidato.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(200)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("Sigla")
                         .IsRequired()
@@ -152,13 +154,12 @@ namespace candidato.Migrations
 
                     b.Property<string>("NomeMae")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(200)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("NomePai")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(200)
+                        .HasColumnType("VARCHAR");
 
                     b.HasKey("Id");
 
@@ -176,8 +177,8 @@ namespace candidato.Migrations
 
                     b.Property<string>("Numero")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(15)
+                        .HasColumnType("VARCHAR");
 
                     b.Property<string>("Tipo")
                         .IsRequired()

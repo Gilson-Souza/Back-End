@@ -5,9 +5,6 @@ namespace candidato.Models;
 
 public class Curso
 {
-    public long Id { get;   set; }
-
-    public String? Nome { get;  set; }
-   
-
+    public long Id { get; set; }
+    public String? Nome { get; set; }
 }

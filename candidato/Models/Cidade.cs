@@ -7,12 +7,6 @@ public class Cidade
 {
     public long Id { get; set; }
     public String? Nome { get; set; }
-
-
-    [ForeignKey("Estado")]
-    public long EstadoId { get;  set; }   
-    public Estado? Estado { get;  set; }
-
-
-
-    }
+    public virtual Estado? Estado { get;  set; }
+    public long EstadoId { get; internal set; }
+}
