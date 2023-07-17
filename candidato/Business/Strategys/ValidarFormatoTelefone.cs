@@ -18,8 +18,7 @@ namespace candidato.Business.Strategys
                 if (!formatoCorreto)
                 {
                     return "Formato de telefone não aceito.";
-                }
-
+                }      
                 
             }
 

@@ -50,11 +50,10 @@ strategies.Add(new ValidarFiliacaoPai());
 strategies.Add(new ValidarCamposVaziosNulos());
 
 
-
 // Registrar o dicionário no contêiner
 builder.Services.AddSingleton<List<IStrategy>>(strategies);
 
-
+//Registrar injeções de dependencia no contêiner
 builder.Services.AddScoped<IFachadaCandidato, FachadaCandidato>();
 builder.Services.AddScoped<IDao, CandidatoDao>();
 
